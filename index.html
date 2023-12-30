@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Екзамен</title>
+
+
+
+</head>
+<body>
+
+<div>Lorem ipsum dolor</div>
+<div>sit amet, consectetur adipisicing</div>
+<div>debitis voluptate eos</div>
+<button id="cutButton">Cut</button>
+
+
+<script>
+    // Отримуємо всі елементи <div> на сторінці
+    var divElements = document.querySelectorAll('div');
+
+    // Отримуємо кнопку за її ідентифікатором
+    var cutButton = document.getElementById('cutButton');
+
+    // Додаємо обробник подій на кнопку
+    cutButton.addEventListener('click', function() {
+        // Ітеруємося по кожному елементу <div>
+        divElements.forEach(function(div) {
+            // Отримуємо текст елементу
+            var text = div.textContent;
+
+            // Перевіряємо, чи текст має більше 10 символів
+            if (text.length > 10) {
+                // Обрізаємо текст до 10 символів і додаємо три крапки
+                var trimmedText = text.substring(0, 10) + '...';
+
+                // Замінюємо оригінальний текст обрізаним
+                div.textContent = trimmedText;
+            }
+        });
+    });
+</script>
+</body>
+</html>
